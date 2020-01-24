@@ -25,7 +25,7 @@ if (process.env.NODE_ENV === 'production') {
 app.use(routes);
 
 // Mongoose
-mongoose.connect('mongodb://localhost/polygondb', {
+mongoose.connect('mongodb://localhost/googlebooks', {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useCreateIndex: true,
