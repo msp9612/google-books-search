@@ -21,19 +21,16 @@ if (process.env.NODE_ENV === 'production') {
 	app.use(express.static('client/build'));
 }
 
+// API routes
 app.use(routes);
 
+// Mongoose
 mongoose.connect('mongodb://localhost/polygondb', {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useCreateIndex: true,
 	useFindAndModify: false,
 });
-
-// // Send miscellaneous requests to the React app
-// app.get('*', (req, res) => {
-// 	res.sendFile(path.join(__dirname, './client/build/index.html'));
-// });
 
 app.listen(PORT, () => {
 	console.log(`🌎 ==> API server now on port ${PORT}!`);
